@@ -4,8 +4,8 @@
 	// "\"换成"/"目的是为了兼容在linux操作系统下的目录
 	require_once(ROOT.'/libs/Smarty.class.php');
 	$smarty = new Smarty();
-	$smarty->setTemplateDir(ROOT.'/templates');
-	$smarty->setCompileDir(ROOT.'/templates_c');
+	//$smarty->setTemplateDir(ROOT.'/templates');
+	//$smarty->setCompileDir(ROOT.'/templates_c');
 	$smarty->right_delimiter='}>';
 	$smarty->left_delimiter='<{';
 	
