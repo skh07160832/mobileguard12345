@@ -1,0 +1,17 @@
+create table fp_user(
+id int primary key auto_increment,
+name varchar(20) unique not null comment '用户名',
+pass varchar(20) not null comment '密码'
+);
+insert into fp_user (name,pass) values ('admin','123');
+
+create table fp_student(
+id int primary key auto_increment,
+studentId varchar(10) unique not null comment '学号',
+name varchar(10) not null comment '姓名',
+gender enum('男','女','保密') not null comment '性别',
+class varchar(10) not null comment '班级'
+);
+insert into fp_student(studentId,name,gender,class)values('07160699','张三','地方','1606');
+
+
