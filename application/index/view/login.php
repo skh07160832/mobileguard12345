@@ -69,11 +69,11 @@ require_once('../../config.php');
 					<table border="0" cellspacing="0" cellpadding="0" class="login-table">
 						<tr>
 							<td>用户名：</td>
-							<td class="two-td"><i class="fa fa-user" ></i><input  type="text" naem='user' placeholder="请输入你的用户名"/></td>
+							<td class="two-td"><i class="fa fa-user" ></i><input  type="text" name='user' placeholder="请输入你的用户名"/></td>
 						</tr>
 						<tr>
 							<td style="padding-left: 10px;">密    码：</td>
-							<td class="two-td"><i class="fa fa-key"><input type="password" name="pass" placeholder="请输入你的面"/></td>
+							<td class="two-td"><i class="fa fa-key"><input type="password" name='pass' placeholder="请输入你的面"/></td>
 						</tr>
 						<tr>
 							<td>验证码：</td>
@@ -92,10 +92,11 @@ require_once('../../config.php');
 		</div>
 	</body>
 	<script>
+		loadXMLDoc();
 		function check(){
 			var temp=document.getElementById('checkkey').value;
 			if(temp==num){
-				alert("验证成功！");
+				//alert("验证成功！");
 				return true;
 			}else{
 				alert("验证码错误！");
@@ -128,7 +129,7 @@ require_once('../../config.php');
 		{
 			
 			num=xmlhttp.responseText;
-			document.getElementById('hidd').innerHTML=num;
+			//document.getElementById('hidd').innerHTML=num;
 		
 		}
 	}
