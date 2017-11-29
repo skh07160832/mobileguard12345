@@ -12,5 +12,5 @@ $arr=[
  $script_l._PUBLIC_.'/static/assets/js/jquery-1.10.2.js'.$script_r
 
 ];
-$a=implode($rn,$arr)."\r\n";
+$a=implode($arr)."\r\n";
 ?>

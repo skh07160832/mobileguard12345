@@ -10,5 +10,9 @@
 	$smarty->setCompileDir(_INDEX_.'/templates_c');
 	$smarty->right_delimiter='}>';
 	$smarty->left_delimiter='<{';
+	$smarty->assign('_PUBLIC_',_PUBLIC_);
+	$smarty->assign('_COMMON_',_COMMON_);
+	$smarty->assign('_APP_',_APP_);
+	$smarty->assign('_INDEX_',_INDEX_);
 	
 ?>
