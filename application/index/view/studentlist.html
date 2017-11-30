@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body> -->
+<{$aa}>
+    <form action="">
+    <table id="at" border='1' style="border:1px solid red">
+    	<{foreach $arr as $d}>
+    		 <tr>
+    		 	<td><{$d.studentId}></td>
+    		 	<td><{$d.name}></td>
+    		 	<td><{$d.gender}></td>
+    		 </tr>
+	      
+	    <{/foreach}>
+    </table>
+    	  
+
+    </form>
+    <br />
+    <button onclick="loadXMLDoc(-1)">上一页</button>
+    <button onclick="loadXMLDoc(1)">下一页</button>
+    <button id="btn3">点击三</button>
+</body>
+<script>
+	var num=0;
+		function loadXMLDoc(abc)
+{
+	   if(abc==1){
+	   	num=num+1;
+	   //	alert(num);
+	   }else{
+	   	num--;
+	   	if(num<0){
+	   		num=0;
+	   	}
+	   //	alert(num);
+	   }
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			////eval("var tt="+xmlhttp.responseText);
+			 tt=JSON.parse(xmlhttp.responseText);
+			//alert(tt.length);
+			if(tt.length<5){
+				num=6;
+			}
+			var at=document.getElementById('at');
+			at.innerHTML=null;
+			var temp='';
+			for(var i=0;i<tt.length;i++){
+			temp+="<tr>";
+    		 	temp+="<td>"+tt[i].studentId+"</td>";
+    		 	temp+="<td>"+tt[i].name+"</td>";
+    		 	temp+="<td>"+tt[i].gender+"</td>";
+    		 	temp+="<td>"+tt[i]['class']+"</td>";
+    		 
+    		 temp+="</tr>";
+			}
+			at.innerHTML=temp;
+			//////alert(xmlhttp.responseText);
+			//num=xmlhttp.responseText;
+			//document.getElementById('hidd').innerHTML=num;
+		
+		}
+	}
+	xmlhttp.open("GET","fenye.php?num1="+num,true);
+	xmlhttp.send();
+	}
+
+</script>
+<script type="text/javascript">
+	$(function(){
+
+		$("#btn3").click(function(event) {
+		alert("message");
+		});
+
+		$("#at tr:gt(5)").remove();
+         
+	});
+	
+</script>
+</html>

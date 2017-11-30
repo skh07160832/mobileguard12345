@@ -44,6 +44,11 @@ insert into fp_student(studentId,name,gender,class)values
 ('09202409','李香兰','男','软件2024')
 ('09202410','黄冰冰','女','软件2024');
 
-
-
+create table s1(
+id int primary key auto_increment,
+stuid  int unique,
+name varchar(20)
+);
+insert into s1(stuid,name)values(1,'张三'),(2,'李四');
+alter table s1 drop index stuid;
 
