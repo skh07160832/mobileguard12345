@@ -3,7 +3,7 @@ require_once('../../config.php');
 require_once(_COMMON_.'/smarty/init.inc.php');
 require_once(_COMMON_.'/db/conn.php');
 require_once('base.php');
-// require_once(_COMMON_.'/link/linkscript.php');
+ //require_once(_COMMON_.'/link/linkscript.php');
 $sql='select * from fp_student ';
 $result=$conn->query($sql);
 $arr=array();
@@ -14,7 +14,7 @@ if($num>0){
 	}
 }
 $smarty->assign("arr",$arr);
-$smarty->assign("aa",$a);
+//$smarty->assign("aa",$a);
 
 //var_dump($arr);
 $smarty->display('studentlist.html');

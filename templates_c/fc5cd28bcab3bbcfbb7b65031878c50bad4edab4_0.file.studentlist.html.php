@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-11-30 14:07:50
+<?php /* Smarty version 3.1.27, created on 2017-12-02 18:00:12
          compiled from "D:\Software\Win7\wamp64\wampserver3.0.6_x64\www\finalphp\application\index\view\studentlist.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:35115a2010b6459878_42901858%%*/
+/*%%SmartyHeaderCode:67305a22ea2cc10873_29462731%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fc5cd28bcab3bbcfbb7b65031878c50bad4edab4' => 
     array (
       0 => 'D:\\Software\\Win7\\wamp64\\wampserver3.0.6_x64\\www\\finalphp\\application\\index\\view\\studentlist.html',
-      1 => 1512050866,
+      1 => 1512221943,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '35115a2010b6459878_42901858',
+  'nocache_hash' => '67305a22ea2cc10873_29462731',
   'variables' => 
   array (
     'aa' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5a2010b64d6895_80921176',
+  'unifunc' => 'content_5a22ea2ccd7c13_57131425',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5a2010b64d6895_80921176')) {
-function content_5a2010b64d6895_80921176 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5a22ea2ccd7c13_57131425')) {
+function content_5a22ea2ccd7c13_57131425 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '35115a2010b6459878_42901858';
+$_smarty_tpl->properties['nocache_hash'] = '67305a22ea2cc10873_29462731';
 ?>
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -37,11 +37,45 @@ $_smarty_tpl->properties['nocache_hash'] = '35115a2010b6459878_42901858';
 	<title>Document</title>
 </head>
 <body> -->
-<?php echo $_smarty_tpl->tpl_vars['aa']->value;?>
+<!--  <?php echo $_smarty_tpl->tpl_vars['aa']->value;?>
+-->
 
-    <form action="">
-    <table id="at" border='1' style="border:1px solid red">
-    	<?php
+
+    <div style="width:70%;float:left;margin:50px;" class="">
+        <h2 class="text-center">学生信息表</h2>
+
+	    <select name="" id="tiaoshu">
+		   	<option value="5">5</option>
+		   	<option value="8">8</option>
+		   	<option value="10">10</option>
+		   	<option value="12">12</option>
+		   	<option value="15">15</option>
+		   	<option value="20">20</option>
+		   	<option value="25">25</option>
+		   	<option value="50">50</option>
+		</select>&nbsp;显示行数
+
+     	<a href="insertstudent.php" style="padding:5px">
+				<span><i class="fa fa-plus-square-o" style="margin-right:2px;"></i>添加学生</span>
+		</a>
+
+         <div style="float:right;line-height:30px;">
+         	内容筛选：<input style="margin-bottom:10px;float:right;height:30px;border:1px solid #7bcdd6;" type="text" id="searchid">
+         </div>
+	     
+
+		 <form action="">
+		    <table class="table table-striped table-bordered table-hover text-center" id="at" >
+		      
+		       <tr style="background:#7bcdd6;">
+		       	<td><i class='fa fa-user'></i>学号</td>
+		       	<td>姓名</td>
+		       	<td>性别</td>
+		       	<td>班级</td>
+		       	<td colspan="2" ><i class='fa fa-wrench'></i>操作</td>
+		       </tr>
+
+		    	<?php
 $_from = $_smarty_tpl->tpl_vars['arr']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -52,99 +86,183 @@ foreach ($_from as $_smarty_tpl->tpl_vars['d']->value) {
 $_smarty_tpl->tpl_vars['d']->_loop = true;
 $foreach_d_Sav = $_smarty_tpl->tpl_vars['d'];
 ?>
-    		 <tr>
-    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['studentId'];?>
+		    		 <tr title="tt">
+		    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['studentId'];?>
 </td>
-    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['name'];?>
+		    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['name'];?>
 </td>
-    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['gender'];?>
+		    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['gender'];?>
 </td>
-    		 </tr>
-	      
-	    <?php
+		    		 	<td><?php echo $_smarty_tpl->tpl_vars['d']->value['class'];?>
+</td>
+		    		 	<td><a href="updatestudent.php?id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">修改</a></td>
+		    		 	<td><a href="deletestudent.php?id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&sId=<?php echo $_smarty_tpl->tpl_vars['d']->value['studentId'];?>
+&sname=<?php echo $_smarty_tpl->tpl_vars['d']->value['name'];?>
+">删除</a></td>
+		    		 </tr>
+			      
+			    <?php
 $_smarty_tpl->tpl_vars['d'] = $foreach_d_Sav;
 }
 ?>
-    </table>
-    	  
-
-    </form>
-    <br />
-    <button onclick="loadXMLDoc(-1)">上一页</button>
-    <button onclick="loadXMLDoc(1)">下一页</button>
-    <button id="btn3">点击三</button>
-</body>
-<?php echo '<script'; ?>
->
-	var num=0;
-		function loadXMLDoc(abc)
-{
-	   if(abc==1){
-	   	num=num+1;
-	   //	alert(num);
-	   }else{
-	   	num--;
-	   	if(num<0){
-	   		num=0;
-	   	}
-	   //	alert(num);
-	   }
-	var xmlhttp;
-	if (window.XMLHttpRequest)
-	{
-		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-		xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{
-		// IE6, IE5 浏览器执行代码
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-		if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-			////eval("var tt="+xmlhttp.responseText);
-			 tt=JSON.parse(xmlhttp.responseText);
-			//alert(tt.length);
-			if(tt.length<5){
-				num=6;
-			}
-			var at=document.getElementById('at');
-			at.innerHTML=null;
-			var temp='';
-			for(var i=0;i<tt.length;i++){
-			temp+="<tr>";
-    		 	temp+="<td>"+tt[i].studentId+"</td>";
-    		 	temp+="<td>"+tt[i].name+"</td>";
-    		 	temp+="<td>"+tt[i].gender+"</td>";
-    		 	temp+="<td>"+tt[i]['class']+"</td>";
-    		 
-    		 temp+="</tr>";
-			}
-			at.innerHTML=temp;
-			//////alert(xmlhttp.responseText);
-			//num=xmlhttp.responseText;
-			//document.getElementById('hidd').innerHTML=num;
+		    </table>
+    	</form>
+    	
+	    	<div style="">
+				<button style="background:#7bcdd6;padding:4px;" id="Pre">上一页</button>&nbsp;&nbsp;
+	    		<button  style="background:#7bcdd6;padding:4px;" id="Next">下一页</button>
+			</div >
+			
+			
+    	
 		
-		}
-	}
-	xmlhttp.open("GET","fenye.php?num1="+num,true);
-	xmlhttp.send();
-	}
+    	
+    </div> 
+    <br />
+    
+   
+</body>
 
-<?php echo '</script'; ?>
->
+	
 <?php echo '<script'; ?>
  type="text/javascript">
+
+
 	$(function(){
 
-		$("#btn3").click(function(event) {
-		alert("message");
-		});
+		$trleg=$("#at tr").length;
+		 var arr=new Array();
+		
+			for(var i=0;i<$trleg;i++){
+		 		arr[i]=$("#at tr:eq("+i+")");
+		 }
 
-		$("#at tr:gt(5)").remove();
-         
+	var $tiaoshu=5;
+	 $("#at tr:gt("+$tiaoshu+")").remove();
+   
+  	var $pageleng=Math.ceil(($trleg-1)/$tiaoshu);
+  	var $yunum=($trleg-1)%$tiaoshu;
+ 	// alert($yunum+"====="+$pageleng);
+ 
+  	var $Nowpage=1;
+
+	$("#Next").click(function(){
+  
+  	$Nowpage+=1;
+  
+   var temp2=($Nowpage)*$tiaoshu+1;
+   
+   $("#at tr:gt(0)").remove();
+	if($Nowpage>$pageleng){
+		
+		$Nowpage=$pageleng;
+	}
+  	if($Nowpage==$pageleng){  
+  	//temp1=($Nowpage-1)*5+1;
+  	if($yunum!=0){
+     temp2=$trleg;
+     
+  	}else{
+
+  	}
+  	
+  }
+	var temp1=($Nowpage-1)*$tiaoshu+1;
+
+ 	 for(var i=temp1;i<temp2;i++){
+  	$("#at").append(arr[i]);
+  	}
+ 
+
+});
+
+	$("#Pre").click(function(){
+	$Nowpage--;
+    if($Nowpage<1){
+    	$Nowpage=1;
+    }
+ 	$("#at tr:gt(0)").remove();
+
+   var temp2=($Nowpage)*$tiaoshu+1;
+   var temp1=($Nowpage-1)*$tiaoshu+1;
+
+  if(temp2>$trleg){
+  	temp2=$trleg
+  }
+
+  for(var i=temp1;i<temp2;i++){
+  	$("#at").append(arr[i]);
+  }
+
+  });
+
+
+
+		 
+		  
+
+		   $("#searchid").on('input',function(e){  
+            		
+            	var $tempval=$("#searchid").val();
+            	$tempval=$tempval.toString();
+            	//alert(typeof($tempval));
+            	if ($tempval!='') {
+
+                 $("#at tr:gt(0)").remove();
+               
+                 var $temp=0;
+				for(var i=0;i<$trleg;i++){
+					
+					var childcon=arr[i].children().text();
+					//alert(typeof(childcon));
+					//var result=childcon.indexOf();
+					//childcon=childcon.toString();
+					//if (childcon.search($tempval)>0 && $tempval!='') {
+						if (childcon.match($tempval)!=null && $tempval!='') {
+						$temp++;
+						$("#at").append(arr[i]);
+					}	
+		 		}
+
+		 			if($temp==0){
+
+		 					var temp3='<tr><td colspan="6">没有任何信息</td></tr>';
+		 					$("#at").append(temp3);
+		 				}
+
+
+		 			}else{
+		 				$Nowpage=1;
+		 				 $("#at tr:gt(0)").remove();
+		 				 
+		 				for (var i = 0; i < $tiaoshu+1; i++) {
+		 					$("#at").append(arr[i]);
+		 					$temp++;
+		 				};
+
+		 				
+		 			}
+             });
+		 
+		
+		  //条数
+		  $('#tiaoshu').change(function(){
+		  	$Nowpage=1;
+
+			$tiaoshu=parseInt($(this).val());
+   			$pageleng=Math.ceil(($trleg-1)/$tiaoshu);
+   			$yunum=($trleg-1)%$tiaoshu;
+		  	
+		  	 $("#at tr:gt(0)").remove();
+		 	for (var i = 0; i < $tiaoshu+1; i++) {
+		 			$("#at").append(arr[i]);
+		 				};
+	
+		  });
+
+
 	});
 	
 <?php echo '</script'; ?>

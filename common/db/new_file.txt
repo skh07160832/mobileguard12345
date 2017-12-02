@@ -52,3 +52,52 @@ name varchar(20)
 insert into s1(stuid,name)values(1,'张三'),(2,'李四');
 alter table s1 drop index stuid;
 
+create table fp_km(
+id int primary key auto_increment comment '科目编号',
+km_name varchar(50) unique comment '科目名称'
+);
+insert into fp_km(km_name)values('java');
+
+
+
+
+ADD CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)
+
+create table s3(
+id int unique,
+aid int unique
+);
+ALTER TABLE s3
+ADD CONSTRAINT UNIQUE (id,aid);
+insert into s3(id,aid)values(1,1);
+
+CREATE TABLE s5
+(
+id int primary key auto_increment comment '主键',
+aid int NOT NULL,
+bid int NOT NULL,
+
+CONSTRAINT uc_PersonID UNIQUE (aid,bid)
+);
+
+
+create table fp_score(
+	s_id int primary key auto_increment comment '成绩主键',
+	s_stuId varchar(50) not null comment '学号',
+	s_kmname varchar(50) not null comment '科目名称',
+	s_cj float not null comment '成绩',
+	CONSTRAINT uc_kmStudnt UNIQUE (s_stuId,s_kmname)
+	##联合唯一值
+);
+
+insert into fp_score(s_stuId,s_kmname,s_cj)values
+('2','java4',92.5),
+('3','java',92.5),
+('4','java',92.5),
+('5','java',92.5),
+('6','java1',92.5),
+('6','java2',92.5),
+('6','java3',92.5),
+('6','java4',92.5)
+;
+

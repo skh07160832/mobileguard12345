@@ -73,7 +73,7 @@ require_once('../../config.php');
 						</tr>
 						<tr>
 							<td style="padding-left: 10px;">密    码：</td>
-							<td class="two-td"><i class="fa fa-key"><input type="password" name='pass' placeholder="请输入你的面"/></td>
+							<td class="two-td"><i class="fa fa-key"></i><input type="password" name='pass' placeholder="请输入你的面"/></td>
 						</tr>
 						<tr>
 							<td>验证码：</td>
