@@ -101,3 +101,39 @@ insert into fp_score(s_stuId,s_kmname,s_cj)values
 ('6','java4',92.5)
 ;
 
+create table tb1(
+tb1_id int primary key auto_increment,
+tb1_sid varchar(20),
+tb1_name varchar(20)
+
+);
+
+create table tb2(
+tb2_id int primary key auto_increment,
+tb2_sid varchar(20),
+tb2_km varchar(20)
+
+);
+create table tb3(
+tb3_id int primary key auto_increment,
+tb3_sid varchar(20),
+tb3_km varchar(20),
+FOREIGN KEY (tb3_sid) REFERENCES Persons(tb1_sid),
+FOREIGN KEY (tb3_km) REFERENCES Persons(tb2_km)
+
+
+);
+
+insert into tb2(tb2_sid,tb2_km)values
+('11001','jVVA'),
+('11002','PHP'),
+('11003','SWIFT'),
+('11004','Zjagnaa'),
+('11005','ios'),
+('11003','andorng');
+
+insert into tb3(tb3_sid,tb3_km)values
+('11001','jVVA1');
+
+ALTER TABLE tb3
+DROP FOREIGN KEY tb3_km;

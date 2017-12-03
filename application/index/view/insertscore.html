@@ -1,0 +1,40 @@
+<style type="text/css">
+	#insertid form input{
+		padding: 5px;
+		margin: 5px;
+	}
+	#insertid form input[type='submit']{
+		background-color: #508af7;
+		width: 100px;
+	}
+ </style>
+ <br>
+<div style="margin:50px;border:1px solid #2d4b4c;width:50%;" id="insertid">
+<h2 class="text-center">添加学生成绩表</h2>
+	<form action="insertscoredo.php" method="post" class="text-center">
+
+		<br>
+
+		学号：<input placeholder="请录入学号" type="text" value="" name="s_stuId" 
+		><br>
+		科目名称：<select name="s_kmname" id="" style="margin:8px;margin-left:80px;">
+			
+			<{foreach $arr as $km}>
+
+			<option value="<{$km}>"> <{$km}> </option>
+			
+			<{/foreach}>
+			
+		</select>
+		<br>
+		班级：<input placeholder="请录入成绩" type="text" value="" name="s_cj" ><br>
+		<input type="submit" value="添加"  name="sub" >
+	</form>
+</div>
+
+	
+</body>
+<script type="text/javascript">
+
+</script>
+</html>

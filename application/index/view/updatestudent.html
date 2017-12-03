@@ -1,0 +1,42 @@
+
+<!-- 
+
+ -->
+ <style type="text/css">
+	#updateid form input{
+		padding: 5px;
+		margin: 5px;
+	}
+	#updateid form input[type='submit']{
+		background-color: #508af7;
+		width: 100px;
+	}
+ </style>
+ <br>
+<div style="margin:50px;border:1px solid #2d4b4c;width:50%;" id="updateid">
+	<h2 class="text-center">修改学生表</h2>
+	<form action="updatestudentdo.php" method="post" class="text-center">
+
+		<input type="hidden" value="<{$id}>" name="id" >
+		<br>
+		学号：<input  type="text" value="<{$sId}>" name="sId" 
+		><br>
+		姓名：<input type="text" value="<{$sname}>"  name="sname" >
+		<br>
+		性别：<input style="margin-left:110px;" type="radio" value="男" name="sgender" <{if ($sgender=='男')}> checked='checked'<{/if}> >男&nbsp;
+		<input type="radio" value="女" name="sgender" <{if ($sgender=='女')}> checked='checked'<{/if}> >女
+
+		<!-- <input type="text" value="<{$sgender}>" name="sgender"><br> -->
+		<br>
+		班级：<input type="text" value="<{$sclass}>" name="sclass" ><br>
+		<input type="submit" value="修改"  name="sub" >
+	</form>
+
+</div>
+
+	
+</body>
+<script type="text/javascript">
+
+</script>
+</html>
