@@ -49,12 +49,10 @@
 				<li><a href="insertkm.php">增加科目</a></li>
 				<li><a href="insertstudent.php">添加学生</a></li>
 				<li><a href="insertscore.php">添加学生成绩</a></li>
-				<li><a href="#">123</a></li>
+			
 			
 				<li><a href="updatepwd.php?user=<?php echo $_SESSION['user'];?>">修改密码</a></li>
-				<li><a href="#">123</a></li>
-				<li><a href="#">123</a></li>
-				<li><a href="#">123</a></li>
+				
 			</div>
 		</div>
 		

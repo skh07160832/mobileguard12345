@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-12-04 14:58:03
+<?php /* Smarty version 3.1.27, created on 2017-12-04 16:47:24
          compiled from "D:\Software\Win7\wamp64\wampserver3.0.6_x64\www\finalphp\application\index\view\searchscore.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:117965a25627bdde2d8_77418914%%*/
+/*%%SmartyHeaderCode:159845a257c1c7ef9a5_68734307%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a73f27cfe7e16b78b16769815674f13957362a34' => 
     array (
       0 => 'D:\\Software\\Win7\\wamp64\\wampserver3.0.6_x64\\www\\finalphp\\application\\index\\view\\searchscore.html',
-      1 => 1512399481,
+      1 => 1512405979,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '117965a25627bdde2d8_77418914',
+  'nocache_hash' => '159845a257c1c7ef9a5_68734307',
   'variables' => 
   array (
     'arr' => 0,
@@ -21,19 +21,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5a25627be57476_62984220',
+  'unifunc' => 'content_5a257c1c859142_21096530',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5a25627be57476_62984220')) {
-function content_5a25627be57476_62984220 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5a257c1c859142_21096530')) {
+function content_5a257c1c859142_21096530 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '117965a25627bdde2d8_77418914';
+$_smarty_tpl->properties['nocache_hash'] = '159845a257c1c7ef9a5_68734307';
 ?>
 <!--  -->
 <!-- 树状图 -->
-<?php echo '<script'; ?>
+<!-- <?php echo '<script'; ?>
  src="https://code.highcharts.com/highcharts.js"><?php echo '</script'; ?>
->
+> -->
 <style type="text/css">
 	.div1{
 		
@@ -88,7 +88,7 @@ $_smarty_tpl->tpl_vars['a'] = $foreach_a_Sav;
 	
 </div>
 <!-- 树状图 -->
-<div id="container" style="width: 550px; height: 400px; margin: 0 auto">
+<div id="container" style="width: 550px; display:none;height: 400px; margin: 0 auto">
 	
 </div>
 
@@ -152,6 +152,9 @@ $_smarty_tpl->tpl_vars['a'] = $foreach_a_Sav;
 $(document).ready(function() {  });
 	function shuzhuang(){
 		var $kmlength=$(".kmclass1");
+		if($kmlength.length>0){
+			$("#container").css("display","block");
+		}
 		//alert($kmlength);
 		//for(var i=0;i<$kmlength;i++){}
 		var kmarr=new Array();
@@ -161,8 +164,8 @@ $(document).ready(function() {  });
 			cjarr[index]=$(this).children('td:eq(1)').text();
 			//alert($(this).children('td:eq(0)').text())
 		});
-		var str1 = JSON.stringify(kmarr);
-		//alert(cjarr.length);
+		//var str1 = JSON.stringify(kmarr);
+		//alert(cjarr[2]);
 	//for(var i=0;i<kmarr.length;i++){
    		//a=kmarr[i];
    //	}
@@ -181,16 +184,21 @@ $(document).ready(function() {  });
    var xAxis = {
 
 
-			str1,
+	categories:["yi"],
    	  
-      crosshair: true
+      crosshair: false
    };
+   for(var i=0;i<kmarr.length;i++){
+	xAxis.categories[i]=kmarr[i];
+   }
+   
    var yAxis = {
       min: 0,
       title: {
-         text: 'Rainfall (mm)'         
+         text: '分数值'         
       }      
    };
+
    var tooltip = {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
@@ -200,9 +208,14 @@ $(document).ready(function() {  });
       useHTML: true
    };
    var plotOptions = {
-      column: {
+      column: 
+      {
          pointPadding: 0.2,
-         borderWidth: 0
+         borderWidth: 0,
+         dataLabels:
+         {
+      		enabled:true
+      	}
       }
    };  
    var credits = {
@@ -211,9 +224,15 @@ $(document).ready(function() {  });
    
    var series= [{
         name: 'Tokyo',
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        data: []
+        // data: ['0']
+
         }];     
-      
+     for(var j=0;j<kmarr.length;j++){
+	series[0]['data'][j]=Number(cjarr[j]);
+
+   }
+ 
    var json = {};   
    json.chart = chart; 
    json.title = title;   
