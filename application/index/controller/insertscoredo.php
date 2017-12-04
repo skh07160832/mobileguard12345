@@ -1,4 +1,4 @@
-v<?php
+<?php
 
 require_once('../../config.php');
 require_once(_COMMON_.'/db/conn.php');
@@ -28,6 +28,7 @@ if($temp==1){
 	echo "<script>setTimeout(function(){window.location.href='scorelist.php';},3000);</script>";
 
 }else{
+
 	if($s_cj==''){
 		echo "成绩不能为空！";
 	}else{

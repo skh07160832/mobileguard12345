@@ -43,10 +43,11 @@
 			</div>
 			<div class="l-left">
 				<li><a href="studentlist.php">学生信息表</a></li>
-				<li><a href="insertstudent.php">添加学生</a></li>
+				<li><a href="searchscore.php">查找成绩</a></li>
 				<li><a href="kmlist.php">科目信息表</a></li>
-				<li><a href="insertkm.php">增加科目</a></li>
 				<li><a href="scorelist.php">学生成绩列表</a></li>
+				<li><a href="insertkm.php">增加科目</a></li>
+				<li><a href="insertstudent.php">添加学生</a></li>
 				<li><a href="insertscore.php">添加学生成绩</a></li>
 				<li><a href="#">123</a></li>
 			

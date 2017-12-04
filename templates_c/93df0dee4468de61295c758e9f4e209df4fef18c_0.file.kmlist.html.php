@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-12-03 13:57:24
+<?php /* Smarty version 3.1.27, created on 2017-12-03 15:13:19
          compiled from "D:\Software\Win7\wamp64\wampserver3.0.6_x64\www\finalphp\application\index\view\kmlist.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:170885a2402c47d28b1_06414931%%*/
+/*%%SmartyHeaderCode:199265a24148f5483c5_71503690%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '93df0dee4468de61295c758e9f4e209df4fef18c' => 
     array (
       0 => 'D:\\Software\\Win7\\wamp64\\wampserver3.0.6_x64\\www\\finalphp\\application\\index\\view\\kmlist.html',
-      1 => 1512222050,
+      1 => 1512313859,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '170885a2402c47d28b1_06414931',
+  'nocache_hash' => '199265a24148f5483c5_71503690',
   'variables' => 
   array (
     'arr' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5a2402c48a9665_05483225',
+  'unifunc' => 'content_5a24148f5e0977_31226369',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5a2402c48a9665_05483225')) {
-function content_5a2402c48a9665_05483225 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5a24148f5e0977_31226369')) {
+function content_5a24148f5e0977_31226369 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '170885a2402c47d28b1_06414931';
+$_smarty_tpl->properties['nocache_hash'] = '199265a24148f5483c5_71503690';
 ?>
 
 <!--  -->
@@ -85,6 +85,7 @@ $foreach_d_Sav = $_smarty_tpl->tpl_vars['d'];
 		    		 	<td><a href="updatekm.php?km_id=<?php echo $_smarty_tpl->tpl_vars['d']->value['km_id'];?>
 ">修改</a></td>
 		    		 	<td><a href="deletekm.php?km_id=<?php echo $_smarty_tpl->tpl_vars['d']->value['km_id'];?>
+&km_name=<?php echo $_smarty_tpl->tpl_vars['d']->value['km_name'];?>
 ">删除</a></td>
 		    		 </tr>
 			      

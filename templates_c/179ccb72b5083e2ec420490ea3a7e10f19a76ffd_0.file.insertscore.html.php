@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-12-03 13:57:47
+<?php /* Smarty version 3.1.27, created on 2017-12-03 15:16:18
          compiled from "D:\Software\Win7\wamp64\wampserver3.0.6_x64\www\finalphp\application\index\view\insertscore.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:229435a2402db0f9c56_17237126%%*/
+/*%%SmartyHeaderCode:21355a241542954621_59907675%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '179ccb72b5083e2ec420490ea3a7e10f19a76ffd' => 
     array (
       0 => 'D:\\Software\\Win7\\wamp64\\wampserver3.0.6_x64\\www\\finalphp\\application\\index\\view\\insertscore.html',
-      1 => 1512236870,
+      1 => 1512314108,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '229435a2402db0f9c56_17237126',
+  'nocache_hash' => '21355a241542954621_59907675',
   'variables' => 
   array (
     'arr' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5a2402db16b0e5_08782982',
+  'unifunc' => 'content_5a2415429bddb3_98706148',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5a2402db16b0e5_08782982')) {
-function content_5a2402db16b0e5_08782982 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5a2415429bddb3_98706148')) {
+function content_5a2415429bddb3_98706148 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '229435a2402db0f9c56_17237126';
+$_smarty_tpl->properties['nocache_hash'] = '21355a241542954621_59907675';
 ?>
 <style type="text/css">
 	#insertid form input{
@@ -73,7 +73,7 @@ $_smarty_tpl->tpl_vars['km'] = $foreach_km_Sav;
 			
 		</select>
 		<br>
-		班级：<input placeholder="请录入成绩" type="text" value="" name="s_cj" ><br>
+		成绩：<input placeholder="请录入成绩" type="text" value="" name="s_cj" ><br>
 		<input type="submit" value="添加"  name="sub" >
 	</form>
 </div>
